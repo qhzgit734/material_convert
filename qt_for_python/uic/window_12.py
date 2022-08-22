@@ -13,68 +13,123 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(505, 384)
-        self.gridLayout = QGridLayout(Dialog)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.textBrowser = QTextBrowser(Dialog)
-        self.textBrowser.setObjectName(u"textBrowser")
+class Ui_Form(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(568, 170)
+        self.verticalLayout = QVBoxLayout(Form)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.tableWidget = QTableWidget(Form)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        if (self.tableWidget.rowCount() < 3):
+            self.tableWidget.setRowCount(3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem6)
+        brush = QBrush(QColor(0, 0, 0, 255))
+        brush.setStyle(Qt.NoBrush)
+        brush1 = QBrush(QColor(0, 0, 0, 255))
+        brush1.setStyle(Qt.NoBrush)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        __qtablewidgetitem7.setBackground(brush1);
+        __qtablewidgetitem7.setForeground(brush);
+        self.tableWidget.setItem(0, 0, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 1, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 2, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 3, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 0, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 1, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 2, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 3, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 0, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 1, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 2, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 3, __qtablewidgetitem18)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setShowGrid(True)
+        self.tableWidget.setSortingEnabled(False)
+        self.tableWidget.horizontalHeader().setVisible(True)
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget.verticalHeader().setDefaultSectionSize(37)
+        self.tableWidget.verticalHeader().setProperty("showSortIndicator", False)
+        self.tableWidget.verticalHeader().setStretchLastSection(True)
 
-        self.gridLayout.addWidget(self.textBrowser, 0, 0, 1, 2)
-
-        self.commandLinkButton = QCommandLinkButton(Dialog)
-        self.commandLinkButton.setObjectName(u"commandLinkButton")
-
-        self.gridLayout.addWidget(self.commandLinkButton, 1, 0, 1, 1)
-
-        self.buttonBox = QDialogButtonBox(Dialog)
-        self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-
-        self.gridLayout.addWidget(self.buttonBox, 1, 1, 1, 1)
+        self.verticalLayout.addWidget(self.tableWidget)
 
 
-        self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
+        self.retranslateUi(Form)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(Form)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"version", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("Dialog", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">material_convert</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">V2.0</span></p>\n"
-"<p align=\"right\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin"
-                        "-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">---------------</span><span style=\" font-size:12pt; font-weight:600;\">version</span><span style=\" font-weight:600;\">---------------</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">plan</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1\u3001\u589e\u52a0\u722c\u53d6\u4e0a\u6d77\u671f\u8d27\u94a2\u6750\u3001\u94dc\u4ef7\u683c\u529f\u80fd</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2\u3001\u589e\u52a0\u6279\u91cf\u5904\u7406EXCEL\u529f\u80fd</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3\u3001\u589e\u52a0\u7535\u7f06\u6a21\u5757\u3001\u6cb9\u6f06\u6a21\u5757"
-                        "</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">V2.0</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1\u3001GUI\u7528PySide2\u7f16\u5199\uff0cGUI\u754c\u9762\u66f4\u73b0\u4ee3\u5316</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2\u3001\u5e95\u5c42\u4ee3\u7801\u4f18\u5316\uff0c\u5927\u91cf\u4f7f\u7528python\u7684class\u9762\u5411\u5bf9\u8c61\u7f16\u7a0b</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3\u3001\u540e\u671f\u8f6f\u4ef6\u66f4\u6613\u7ef4\u62a4</p>\n"
-"<p style=\" "
-                        "margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">4\u3001\u65b0\u589e\u6865\u67b6\u6a21\u5757</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">V1.0</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1\u3001GUI\u4f7f\u7528tkinter\u7f16\u5199</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2\u3001\u5e95\u5c42\u4ee3\u7801\u4f7f\u7528python3.8.1</p>\n"
-"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-"
-                        "weight:600;\">by qhz734</span></p>\n"
-"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">2022.07.20</span></p></body></html>", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("Dialog", u"Github", None))
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"\u6297\u9707\u652f\u67b6", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"0", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Form", u"1", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Form", u"2", None));
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"3", None));
+        ___qtablewidgetitem4 = self.tableWidget.verticalHeaderItem(0)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"0", None));
+        ___qtablewidgetitem5 = self.tableWidget.verticalHeaderItem(1)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("Form", u"1", None));
+        ___qtablewidgetitem6 = self.tableWidget.verticalHeaderItem(2)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("Form", u"2", None));
+
+        __sortingEnabled = self.tableWidget.isSortingEnabled()
+        self.tableWidget.setSortingEnabled(False)
+        ___qtablewidgetitem7 = self.tableWidget.item(0, 0)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("Form", u"(\u5143/m2)", None));
+        ___qtablewidgetitem8 = self.tableWidget.item(0, 1)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("Form", u"\u697c\u680b", None));
+        ___qtablewidgetitem9 = self.tableWidget.item(0, 2)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("Form", u"\u975e\u4eba\u9632", None));
+        ___qtablewidgetitem10 = self.tableWidget.item(0, 3)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("Form", u"\u4eba\u9632", None));
+        ___qtablewidgetitem11 = self.tableWidget.item(1, 0)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("Form", u"\u6297\u9707\u652f\u67b6", None));
+        ___qtablewidgetitem12 = self.tableWidget.item(1, 1)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("Form", u"1.35", None));
+        ___qtablewidgetitem13 = self.tableWidget.item(1, 2)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("Form", u"6", None));
+        ___qtablewidgetitem14 = self.tableWidget.item(1, 3)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("Form", u"20", None));
+        ___qtablewidgetitem15 = self.tableWidget.item(2, 0)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("Form", u"\u6d88\u9632\u68c0\u6d4b", None));
+        ___qtablewidgetitem16 = self.tableWidget.item(2, 1)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("Form", u"0.6", None));
+        ___qtablewidgetitem17 = self.tableWidget.item(2, 2)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("Form", u"-", None));
+        ___qtablewidgetitem18 = self.tableWidget.item(2, 3)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("Form", u"-", None));
+        self.tableWidget.setSortingEnabled(__sortingEnabled)
+
     # retranslateUi
 

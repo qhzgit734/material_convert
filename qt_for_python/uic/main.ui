@@ -160,11 +160,11 @@
         <string notr="true"/>
        </property>
        <attribute name="title">
-        <string>其他</string>
+        <string>其他金属材料</string>
        </attribute>
        <widget class="QPushButton" name="pushButton_12">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="geometry">
          <rect>
@@ -175,7 +175,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>油漆</string>
+         <string>抗震支架</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_10">

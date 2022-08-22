@@ -62,6 +62,7 @@ class Ui_Form(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout.addWidget(self.comboBox, 1, 0, 1, 1)
@@ -116,7 +117,8 @@ class Ui_Form(object):
         self.comboBox.setItemText(11, QCoreApplication.translate("Form", u"200", None))
         self.comboBox.setItemText(12, QCoreApplication.translate("Form", u"250", None))
         self.comboBox.setItemText(13, QCoreApplication.translate("Form", u"300", None))
-        self.comboBox.setItemText(14, QCoreApplication.translate("Form", u"600", None))
+        self.comboBox.setItemText(14, QCoreApplication.translate("Form", u"500", None))
+        self.comboBox.setItemText(15, QCoreApplication.translate("Form", u"600", None))
 
         self.label_XS_var.setText(QCoreApplication.translate("Form", u"xs", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u6362\u7b97", None))

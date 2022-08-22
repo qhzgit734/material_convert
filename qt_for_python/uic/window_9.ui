@@ -130,6 +130,11 @@
        </item>
        <item>
         <property name="text">
+         <string>500</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
          <string>600</string>
         </property>
        </item>

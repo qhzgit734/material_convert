@@ -7,7 +7,7 @@ from PySide2.QtGui import *
 QWidget为基类:Ui_Form(),MainWindow为基类:Ui_MainWindow()
 '''
 from qt_for_python.uic import main, window_1, window_2, window_3, window_4, window_5, window_6, window_7, \
-    window_8, window_9, window_10, window_11, window_12, window_13
+    window_8, window_9, window_10, window_11, window_12, window_v, window_h
 
 # 全局变量
 tie = 7850
@@ -25,13 +25,13 @@ sender = str()
 dict1 = {'10#': 10.077}
 # 镀锌钢管
 dict2 = {'15': 1.357, '20': 1.76, '25': 2.554, '32': 3.56, '40': 4.1, '50': 5.607, '65': 7.536, '80': 8.88, '100': 11.53,
-         '125': 15.942, '150': 19.27, '200': 36.12, '250': 40.7, '300': 47.86, '600': 131}
+         '125': 15.942, '150': 19.27, '200': 36.12, '250': 40.7, '300': 47.86, '500': 109, '600': 131}
 # 焊接(厚壁)钢管
 dict3 = {'15': 1.26, '20': 1.63, '25': 2.42, '32': 3.13, '40': 3.84, '50': 4.88, '65': 6.64, '80': 8.34, '100': 10.85,
          '125': 14, '150': 17.81, '200': 30.53}
 # 不锈钢管
 dict4 = {'15': 2.58, '20': 3.34, '25': 4.85, '32': 6.76, '40': 7.79, '50': 10.65, '65': 14.32, '80': 16.87, '100': 21.91,
-         '125': 30.29, '150': 36.61, '200': 68.63, '250': 77.33, '300': 90.93, '600': 248.9}
+         '125': 30.29, '150': 36.61, '200': 68.63, '250': 77.33, '300': 90.93, '500': 185, '600': 248.9}
 # 类-输入
 class Var_in:
     def get_ent(self, widget_v):
@@ -176,7 +176,10 @@ class Convert:
                 else:
                     xs = round(1 + 0.05 * (d - 22) / 1.5, 3)
         elif cal_title == '桥架':
-            xs = round((c + e * 2) / (a + b * 2), 3)
+            if cal_ui.radioButton_2.isChecked() != True:
+                xs = round((c + e * 2) / (a + b * 2), 3)
+            else:
+                xs = round((c + e ) / (a + b ), 3)
         else:
             pass
     
@@ -213,7 +216,7 @@ class Creat_root(QMainWindow):
         self.root_ui.pushButton_9.clicked.connect(self.open_win_t)
         self.root_ui.pushButton_10.clicked.connect(self.open_win_t)
         self.root_ui.pushButton_11.clicked.connect(self.open_win_t)
-        # self.root_ui.pushButton_12.clicked.connect(self.open_win_t)
+        self.root_ui.pushButton_12.clicked.connect(self.open_win_t)
         self.root_ui.pushButton_1.clicked.connect(lambda: self.open_win(widget1))
         self.root_ui.pushButton_2.clicked.connect(lambda: self.open_win(widget2))
         self.root_ui.pushButton_3.clicked.connect(lambda: self.open_win(widget3))
@@ -225,7 +228,7 @@ class Creat_root(QMainWindow):
         self.root_ui.pushButton_9.clicked.connect(lambda: self.open_win(widget9))
         self.root_ui.pushButton_10.clicked.connect(lambda: self.open_win(widget10))
         self.root_ui.pushButton_11.clicked.connect(lambda: self.open_win(widget11))
-        # self.root_ui.pushButton_12.clicked.connect(lambda: self.open_win(widget11))
+        self.root_ui.pushButton_12.clicked.connect(lambda: self.open_win(widget12))
         self.root_ui.action.triggered.connect(lambda: self.open_win_a(dialog_v))
         self.root_ui.actionhelp.triggered.connect(lambda: self.open_win_a(dialog_h))
         
@@ -435,8 +438,15 @@ class Creat_win11(QWidget):
         self.cvt1.cal_xs(widget_f)
         self.cvt1.cal_res(widget_f)
         self.win_ui.lineEdit_RES.setText(str(res))
+# 类-抗震支架
+class Creat_win12(QWidget):
+    def __init__(self, Ui_file):
+        super().__init__()
+        self.win = QWidget()
+        self.win_ui = Ui_file.Ui_Form()
+        self.win_ui.setupUi(self.win)
 # 类-版本
-class Creat_win12(QDialog):
+class Creat_win_v(QDialog):
     def __init__(self, Ui_file):
         super().__init__()
         self.win = QDialog()
@@ -445,7 +455,7 @@ class Creat_win12(QDialog):
         self.win_ui.commandLinkButton.clicked.connect(self.open_git)
     
     def open_git(self):
-        QDesktopServices.openUrl(QUrl("https://github.com/qhzgit734/py_material_convert.git"))
+        QDesktopServices.openUrl(QUrl("https://github.com/qhzgit734?tab=repositories"))
         
 if __name__ == '__main__':
     # QApplication类的实例
@@ -463,8 +473,9 @@ if __name__ == '__main__':
     widget9 = Creat_win9(window_9)
     widget10 = Creat_win10(window_10)
     widget11 = Creat_win11(window_11)
-    dialog_v = Creat_win12(window_12)
-    dialog_h = Creat_win12(window_13)
+    widget12 = Creat_win12(window_12)
+    dialog_v = Creat_win_v(window_v)
+    dialog_h = Creat_win_v(window_h)
     # 窗口显示
     mainwindow.root.show()
     app.setWindowIcon(QIcon('logo.ico'))

@@ -17,9 +17,9 @@ class Ui_widget(object):
     def setupUi(self, widget):
         if not widget.objectName():
             widget.setObjectName(u"widget")
-        widget.resize(782, 115)
-        self.horizontalLayout = QHBoxLayout(widget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        widget.resize(746, 281)
+        self.verticalLayout_2 = QVBoxLayout(widget)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
         self.pushButton = QPushButton(widget)
@@ -97,7 +97,31 @@ class Ui_widget(object):
         self.gridLayout.addWidget(self.line, 2, 0, 1, 5)
 
 
-        self.horizontalLayout.addLayout(self.gridLayout)
+        self.verticalLayout_2.addLayout(self.gridLayout)
+
+        self.line_2 = QFrame(widget)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_2.addWidget(self.line_2)
+
+        self.groupBox = QGroupBox(widget)
+        self.groupBox.setObjectName(u"groupBox")
+        self.horizontalLayout = QHBoxLayout(self.groupBox)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.radioButton_2 = QRadioButton(self.groupBox)
+        self.radioButton_2.setObjectName(u"radioButton_2")
+        self.radioButton_2.setChecked(True)
+
+        self.horizontalLayout.addWidget(self.radioButton_2)
+
+        self.horizontalSpacer_2 = QSpacerItem(618, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_2.addWidget(self.groupBox)
 
 
         self.retranslateUi(widget)
@@ -116,5 +140,7 @@ class Ui_widget(object):
         self.lineEdit_B.setText(QCoreApplication.translate("widget", u"100", None))
         self.label_A.setText(QCoreApplication.translate("widget", u"A(mm)", None))
         self.lineEdit_D.setText(QCoreApplication.translate("widget", u"117.5", None))
+        self.groupBox.setTitle(QCoreApplication.translate("widget", u"\u5c5e\u6027", None))
+        self.radioButton_2.setText(QCoreApplication.translate("widget", u"\u5e26\u76d6\u677f", None))
     # retranslateUi
 

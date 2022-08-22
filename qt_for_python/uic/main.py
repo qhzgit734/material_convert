@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
         self.tab_4.setStyleSheet(u"")
         self.pushButton_12 = QPushButton(self.tab_4)
         self.pushButton_12.setObjectName(u"pushButton_12")
-        self.pushButton_12.setEnabled(False)
+        self.pushButton_12.setEnabled(True)
         self.pushButton_12.setGeometry(QRect(210, 10, 93, 28))
         self.pushButton_10 = QPushButton(self.tab_4)
         self.pushButton_10.setObjectName(u"pushButton_10")
@@ -175,10 +175,10 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"\u9540\u950c\u94a2\u7ba1", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"\u710a\u63a5\u94a2\u7ba1", None))
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"\u4e0d\u9508\u94a2\u7ba1", None))
-        self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"\u6cb9\u6f06", None))
+        self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"\u6297\u9707\u652f\u67b6", None))
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"\u98ce\u7ba1\u9644\u4ef6", None))
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"\u6865\u67b6", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"\u5176\u4ed6", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"\u5176\u4ed6\u91d1\u5c5e\u6750\u6599", None))
         self.menu.setTitle(QCoreApplication.translate("MainWindow", u"\u5173\u4e8e", None))
     # retranslateUi
 
